@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		823096C3239F814E00FB5D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823096C2239F814E00FB5D75 /* AppDelegate.swift */; };
-		823096C5239F814E00FB5D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823096C4239F814E00FB5D75 /* SceneDelegate.swift */; };
 		823096C7239F814E00FB5D75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823096C6239F814E00FB5D75 /* ViewController.swift */; };
-		823096CA239F814E00FB5D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823096C8239F814E00FB5D75 /* Main.storyboard */; };
 		823096CC239F814F00FB5D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823096CB239F814F00FB5D75 /* Assets.xcassets */; };
 		823096CF239F814F00FB5D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823096CD239F814F00FB5D75 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		823096BF239F814E00FB5D75 /* TesteiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823096C2239F814E00FB5D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		823096C4239F814E00FB5D75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		823096C6239F814E00FB5D75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		823096C9239F814E00FB5D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		823096CB239F814F00FB5D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823096CE239F814F00FB5D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823096D0239F814F00FB5D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				823096C2239F814E00FB5D75 /* AppDelegate.swift */,
-				823096C4239F814E00FB5D75 /* SceneDelegate.swift */,
 				823096C6239F814E00FB5D75 /* ViewController.swift */,
-				823096C8239F814E00FB5D75 /* Main.storyboard */,
 				823096CB239F814F00FB5D75 /* Assets.xcassets */,
 				823096CD239F814F00FB5D75 /* LaunchScreen.storyboard */,
 				823096D0239F814F00FB5D75 /* Info.plist */,
@@ -127,7 +121,6 @@
 			files = (
 				823096CF239F814F00FB5D75 /* LaunchScreen.storyboard in Resources */,
 				823096CC239F814F00FB5D75 /* Assets.xcassets in Resources */,
-				823096CA239F814E00FB5D75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +133,12 @@
 			files = (
 				823096C7239F814E00FB5D75 /* ViewController.swift in Sources */,
 				823096C3239F814E00FB5D75 /* AppDelegate.swift in Sources */,
-				823096C5239F814E00FB5D75 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		823096C8239F814E00FB5D75 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				823096C9239F814E00FB5D75 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		823096CD239F814F00FB5D75 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +200,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,6 +271,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5N8L9587G7;
 				INFOPLIST_FILE = TesteiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +290,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5N8L9587G7;
 				INFOPLIST_FILE = TesteiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
