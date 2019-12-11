@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82093E8F23A0917D0006FD32 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82093E8E23A0917C0006FD32 /* UIColor+Extension.swift */; };
+		82093E9123A0962C0006FD32 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82093E9023A0962C0006FD32 /* UITextField+Extension.swift */; };
 		823096C3239F814E00FB5D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823096C2239F814E00FB5D75 /* AppDelegate.swift */; };
-		823096C7239F814E00FB5D75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823096C6239F814E00FB5D75 /* ViewController.swift */; };
+		823096C7239F814E00FB5D75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823096C6239F814E00FB5D75 /* LoginViewController.swift */; };
 		823096CC239F814F00FB5D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823096CB239F814F00FB5D75 /* Assets.xcassets */; };
 		823096CF239F814F00FB5D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823096CD239F814F00FB5D75 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82093E8E23A0917C0006FD32 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		82093E9023A0962C0006FD32 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		823096BF239F814E00FB5D75 /* TesteiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823096C2239F814E00FB5D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		823096C6239F814E00FB5D75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		823096C6239F814E00FB5D75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		823096CB239F814F00FB5D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823096CE239F814F00FB5D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823096D0239F814F00FB5D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82093E8D23A091400006FD32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82093E8E23A0917C0006FD32 /* UIColor+Extension.swift */,
+				82093E9023A0962C0006FD32 /* UITextField+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		823096B6239F814E00FB5D75 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +65,9 @@
 		823096C1239F814E00FB5D75 /* TesteiOS */ = {
 			isa = PBXGroup;
 			children = (
+				82093E8D23A091400006FD32 /* Extensions */,
 				823096C2239F814E00FB5D75 /* AppDelegate.swift */,
-				823096C6239F814E00FB5D75 /* ViewController.swift */,
+				823096C6239F814E00FB5D75 /* LoginViewController.swift */,
 				823096CB239F814F00FB5D75 /* Assets.xcassets */,
 				823096CD239F814F00FB5D75 /* LaunchScreen.storyboard */,
 				823096D0239F814F00FB5D75 /* Info.plist */,
@@ -131,7 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823096C7239F814E00FB5D75 /* ViewController.swift in Sources */,
+				82093E8F23A0917D0006FD32 /* UIColor+Extension.swift in Sources */,
+				82093E9123A0962C0006FD32 /* UITextField+Extension.swift in Sources */,
+				823096C7239F814E00FB5D75 /* LoginViewController.swift in Sources */,
 				823096C3239F814E00FB5D75 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
