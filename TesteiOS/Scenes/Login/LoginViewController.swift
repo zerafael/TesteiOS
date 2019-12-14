@@ -6,9 +6,12 @@
 //  Copyright © 2019 José Rafael Ferraz Pacheco. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    var presenter: LoginPresenter! = nil
     
     let logoImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "logo"))
@@ -47,6 +50,7 @@ class LoginViewController: UIViewController {
         button.tintColor = .white
         button.layer.cornerRadius = 4
         button.backgroundColor = UIColor(rgb: "#3B48EE")
+        
         return button
     }()
     
@@ -63,6 +67,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupLayout()
+        loginButton.addTarget(self, action: #selector(handleLoginButton), for: .touchUpInside)
+        
+        presenter = LoginPresenter(delegate: self)
     }
     
     func setupLayout() {
@@ -93,5 +100,14 @@ class LoginViewController: UIViewController {
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         loginButton.widthAnchor.constraint(equalToConstant: 190).isActive = true
     }
+    
+    @objc func handleLoginButton() {
+        presenter.handleLogin(user: loginTextField.text!, password: passwordTextField.text!)
+    }
 }
 
+extension LoginViewController: LoginDelegate {
+    func loginSucceed() {
+        self.navigationController?.popViewController(animated: false)
+    }
+}
