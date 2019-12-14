@@ -108,6 +108,6 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginDelegate {
     func loginSucceed() {
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
 }
