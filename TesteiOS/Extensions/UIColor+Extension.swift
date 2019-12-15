@@ -20,6 +20,10 @@ extension UIColor {
     }
     
     convenience init(rgb: String) {
+        self.init(rgb: rgb, alpha: 1)
+    }
+    
+    convenience init(rgb: String, alpha: CGFloat) {
         var color: String = rgb
         
         if (color.hasPrefix("#")) {
@@ -32,7 +36,7 @@ extension UIColor {
         let green = CGFloat((colorHex >> 8) & 0xFF)
         let blue = CGFloat(colorHex & 0xFF)
         
-        self.init(r: red, g: green, b: blue)
+        self.init(r: red, g: green, b: blue, a: alpha)
     }
     
     convenience init(white: CGFloat) {
