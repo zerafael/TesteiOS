@@ -10,8 +10,13 @@
 		23A14D89A922F682E48B56B6 /* Pods_TesteiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD09C2EDF6775B78C97974BC /* Pods_TesteiOS.framework */; };
 		82093E8F23A0917D0006FD32 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82093E8E23A0917C0006FD32 /* UIColor+Extension.swift */; };
 		82093E9123A0962C0006FD32 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82093E9023A0962C0006FD32 /* UITextField+Extension.swift */; };
-		820DEA8823A460D60004535E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA8723A460D60004535E /* InfoViewController.swift */; };
+		820DEA8823A460D60004535E /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA8723A460D60004535E /* AccountViewController.swift */; };
 		820DEA8A23A463CF0004535E /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA8923A463CF0004535E /* LoginDelegate.swift */; };
+		820DEA8C23A48AEA0004535E /* AccountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA8B23A48AEA0004535E /* AccountInfoView.swift */; };
+		820DEA9023A48B210004535E /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA8F23A48B210004535E /* StatementTableViewCell.swift */; };
+		820DEA9223A498AD0004535E /* AccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA9123A498AD0004535E /* AccountDelegate.swift */; };
+		820DEA9423A49DB30004535E /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA9323A49DB30004535E /* AccountPresenter.swift */; };
+		820DEA9723A5CB7A0004535E /* HeaderStatementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA9623A5CB7A0004535E /* HeaderStatementsView.swift */; };
 		820E036123A34126009D54CE /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E036023A34126009D54CE /* KeychainStorage.swift */; };
 		820E036423A34224009D54CE /* KeychainUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E036323A34224009D54CE /* KeychainUserStorage.swift */; };
 		820F292123A1BE5A00D635D4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F292023A1BE5A00D635D4 /* LoginPresenter.swift */; };
@@ -29,8 +34,13 @@
 		458254502791457CF6C5B34D /* Pods-TesteiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TesteiOS.release.xcconfig"; path = "Target Support Files/Pods-TesteiOS/Pods-TesteiOS.release.xcconfig"; sourceTree = "<group>"; };
 		82093E8E23A0917C0006FD32 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		82093E9023A0962C0006FD32 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
-		820DEA8723A460D60004535E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		820DEA8723A460D60004535E /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		820DEA8923A463CF0004535E /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
+		820DEA8B23A48AEA0004535E /* AccountInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoView.swift; sourceTree = "<group>"; };
+		820DEA8F23A48B210004535E /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
+		820DEA9123A498AD0004535E /* AccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDelegate.swift; sourceTree = "<group>"; };
+		820DEA9323A49DB30004535E /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		820DEA9623A5CB7A0004535E /* HeaderStatementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStatementsView.swift; sourceTree = "<group>"; };
 		820E036023A34126009D54CE /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		820E036323A34224009D54CE /* KeychainUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUserStorage.swift; sourceTree = "<group>"; };
 		820F292023A1BE5A00D635D4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -87,7 +97,7 @@
 		820DEA8423A45FBE0004535E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				820DEA8623A4600C0004535E /* Info */,
+				820DEA8623A4600C0004535E /* Account */,
 				820DEA8523A45FCD0004535E /* Login */,
 			);
 			path = Scenes;
@@ -103,12 +113,25 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		820DEA8623A4600C0004535E /* Info */ = {
+		820DEA8623A4600C0004535E /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				820DEA8723A460D60004535E /* InfoViewController.swift */,
+				820DEA9523A5CAB50004535E /* Table */,
+				820DEA8723A460D60004535E /* AccountViewController.swift */,
+				820DEA9123A498AD0004535E /* AccountDelegate.swift */,
+				820DEA9323A49DB30004535E /* AccountPresenter.swift */,
 			);
-			path = Info;
+			path = Account;
+			sourceTree = "<group>";
+		};
+		820DEA9523A5CAB50004535E /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				820DEA8B23A48AEA0004535E /* AccountInfoView.swift */,
+				820DEA8F23A48B210004535E /* StatementTableViewCell.swift */,
+				820DEA9623A5CB7A0004535E /* HeaderStatementsView.swift */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		820E035F23A33F27009D54CE /* Storage */ = {
@@ -302,15 +325,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				820F292723A1FD3E00D635D4 /* ApiClient.swift in Sources */,
-				820DEA8823A460D60004535E /* InfoViewController.swift in Sources */,
+				820DEA8823A460D60004535E /* AccountViewController.swift in Sources */,
 				82093E8F23A0917D0006FD32 /* UIColor+Extension.swift in Sources */,
 				82093E9123A0962C0006FD32 /* UITextField+Extension.swift in Sources */,
+				820DEA9023A48B210004535E /* StatementTableViewCell.swift in Sources */,
 				820F292423A1F16300D635D4 /* User.swift in Sources */,
+				820DEA8C23A48AEA0004535E /* AccountInfoView.swift in Sources */,
 				823096C7239F814E00FB5D75 /* LoginViewController.swift in Sources */,
+				820DEA9723A5CB7A0004535E /* HeaderStatementsView.swift in Sources */,
+				820DEA9223A498AD0004535E /* AccountDelegate.swift in Sources */,
 				823096C3239F814E00FB5D75 /* AppDelegate.swift in Sources */,
 				820F292123A1BE5A00D635D4 /* LoginPresenter.swift in Sources */,
 				820F292A23A1FECD00D635D4 /* Constants.swift in Sources */,
 				820E036423A34224009D54CE /* KeychainUserStorage.swift in Sources */,
+				820DEA9423A49DB30004535E /* AccountPresenter.swift in Sources */,
 				820DEA8A23A463CF0004535E /* LoginDelegate.swift in Sources */,
 				820E036123A34126009D54CE /* KeychainStorage.swift in Sources */,
 			);
