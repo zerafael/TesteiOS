@@ -29,7 +29,7 @@ class AccountPresenter {
     
     private func loadStatements() {
         api.loadUserStatements(userId: user.id) { (statements) in
-            print(statements.count)
+            self.delegate.setStatements(statements: statements)
         }
     }
     

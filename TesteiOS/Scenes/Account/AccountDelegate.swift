@@ -10,6 +10,6 @@ import Foundation
 
 protocol AccountDelegate {
     func setAccountInfo(user: User)
-    
+    func setStatements(statements: [Statement])
     func logoutSucceed()
 }

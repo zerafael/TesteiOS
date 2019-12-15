@@ -25,19 +25,8 @@ class ApiClient {
         
         Alamofire.request(urlRequest, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             if response.result.isSuccess {
-                print("Success")
-                
-                let parsedResult: [String: AnyObject]!
-                
-                do {
-                    // Separar parser da API?
-                    parsedResult = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String: AnyObject]
-                    let user = (parsedResult["userAccount"] as? [String: AnyObject]).flatMap(User.init)!
-
+                if let user = Parser().parseUser(data: response.data!) {
                     completion(user)
-                    
-                } catch {
-                    print("Erro ao parsear JSON")
                 }
             } else {
                 print("Failure")
@@ -50,29 +39,8 @@ class ApiClient {
         
         Alamofire.request(urlRequest, method: .get).responseJSON { (response) in
             if response.result.isSuccess {
-                print("Success")
-                
-                let parsedResult: [String: AnyObject]!
-                
-                do {
-                    // Separar parser da API
-                    parsedResult = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String: AnyObject]
-                    let statements = (parsedResult["statementList"] as? [[String: AnyObject]])!//.flatMap(User.init)!
-                    
-                    var s = [Statement]()
-                    
-                    for statement in statements {
-                        s.append(Statement(json: statement)!)
-                    }
-                    
-                    print(s)
-
-//                    print(statements)
-//                    print(statements!.count)
-//                    completion(statements)
-                    
-                } catch {
-                    print("Erro ao parsear JSON")
+                if let statements = Parser().parseStatements(data: response.data!) {
+                    completion(statements)
                 }
             } else {
                 print("Failure")

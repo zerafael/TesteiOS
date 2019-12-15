@@ -73,10 +73,13 @@ extension AccountViewController: AccountDelegate {
     func setAccountInfo(user: User) {
         accountInfoView.nameInput.text = user.name
         accountInfoView.accountNumberInput.text = user.bankAccount + " / " + user.agency
-        accountInfoView.balanceInput.text = String(user.balance)
+        accountInfoView.balanceInput.text = Formatter().formatCurrency(value: user.balance)
     }
     
-    
+    func setStatements(statements: [Statement]) {
+        self.statements = statements
+        tableView.reloadData()
+    }
     
     func logoutSucceed() {
         self.navigationController?.pushViewController(LoginViewController(), animated: false)
@@ -98,11 +101,22 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
     }    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        if (statements != nil) {
+            return statements.count
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let statement = statements[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? StatementTableViewCell
+        
+        cell?.titleInput.text = statement.title
+        cell?.dateInput.text = statement.date
+        cell?.descInput.text = statement.desc
+        cell?.valueInput.text = Formatter().formatCurrency(value: statement.value)
+        
         return cell!
     }
 }
