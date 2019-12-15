@@ -17,6 +17,7 @@
 		820DEA9223A498AD0004535E /* AccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA9123A498AD0004535E /* AccountDelegate.swift */; };
 		820DEA9423A49DB30004535E /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA9323A49DB30004535E /* AccountPresenter.swift */; };
 		820DEA9723A5CB7A0004535E /* HeaderStatementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA9623A5CB7A0004535E /* HeaderStatementsView.swift */; };
+		820DEA9B23A5F2070004535E /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820DEA9A23A5F2070004535E /* Statement.swift */; };
 		820E036123A34126009D54CE /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E036023A34126009D54CE /* KeychainStorage.swift */; };
 		820E036423A34224009D54CE /* KeychainUserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820E036323A34224009D54CE /* KeychainUserStorage.swift */; };
 		820F292123A1BE5A00D635D4 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F292023A1BE5A00D635D4 /* LoginPresenter.swift */; };
@@ -41,6 +42,7 @@
 		820DEA9123A498AD0004535E /* AccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDelegate.swift; sourceTree = "<group>"; };
 		820DEA9323A49DB30004535E /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		820DEA9623A5CB7A0004535E /* HeaderStatementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStatementsView.swift; sourceTree = "<group>"; };
+		820DEA9A23A5F2070004535E /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		820E036023A34126009D54CE /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		820E036323A34224009D54CE /* KeychainUserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUserStorage.swift; sourceTree = "<group>"; };
 		820F292023A1BE5A00D635D4 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -118,8 +120,8 @@
 			children = (
 				820DEA9523A5CAB50004535E /* Table */,
 				820DEA8723A460D60004535E /* AccountViewController.swift */,
-				820DEA9123A498AD0004535E /* AccountDelegate.swift */,
 				820DEA9323A49DB30004535E /* AccountPresenter.swift */,
+				820DEA9123A498AD0004535E /* AccountDelegate.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				820F292323A1F16300D635D4 /* User.swift */,
+				820DEA9A23A5F2070004535E /* Statement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				820F292723A1FD3E00D635D4 /* ApiClient.swift in Sources */,
+				820DEA9B23A5F2070004535E /* Statement.swift in Sources */,
 				820DEA8823A460D60004535E /* AccountViewController.swift in Sources */,
 				82093E8F23A0917D0006FD32 /* UIColor+Extension.swift in Sources */,
 				82093E9123A0962C0006FD32 /* UITextField+Extension.swift in Sources */,

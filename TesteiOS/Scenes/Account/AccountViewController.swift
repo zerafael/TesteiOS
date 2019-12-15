@@ -13,7 +13,11 @@ private let headerIdentifier = "accountHeaderIdentifier"
 
 class AccountViewController: UIViewController {
     
+    var presenter: AccountPresenter! = nil
+    
     var accountInfoView: AccountInfoView!
+    
+    var statements: [Statement]!
     
     lazy var tableView: UITableView = {
         let table = UITableView()
@@ -30,16 +34,15 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkLogged()
-        
         setupView()
         setupHandlers()
+        
+        presenter = AccountPresenter(delegate: self)
+        presenter.checkLogged()
     }
     
-    func checkLogged() {
-        if (!UserDefaults.standard.bool(forKey: "logged")) {
-            self.navigationController?.pushViewController(LoginViewController(), animated: false)
-        }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func setupView() {
@@ -62,14 +65,21 @@ class AccountViewController: UIViewController {
     }
     
     @objc func handleLogout() {
-        UserDefaults.standard.removeObject(forKey: "logged")
-        checkLogged()
+        self.presenter.handleLogout()
     }
 }
 
-extension AccountViewController {
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+extension AccountViewController: AccountDelegate {
+    func setAccountInfo(user: User) {
+        accountInfoView.nameInput.text = user.name
+        accountInfoView.accountNumberInput.text = user.bankAccount + " / " + user.agency
+        accountInfoView.balanceInput.text = String(user.balance)
+    }
+    
+    
+    
+    func logoutSucceed() {
+        self.navigationController?.pushViewController(LoginViewController(), animated: false)
     }
 }
 

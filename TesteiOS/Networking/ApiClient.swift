@@ -43,11 +43,40 @@ class ApiClient {
                 print("Failure")
             }
         }
-        
-        
     }
     
-    func loadUserData() {
+    func loadUserStatements(userId: Int, completion: @escaping ([Statement]) -> Void) {
+        let urlRequest = baseUrl + Contants.API.statementsUrl + "/\(userId)"
         
+        Alamofire.request(urlRequest, method: .get).responseJSON { (response) in
+            if response.result.isSuccess {
+                print("Success")
+                
+                let parsedResult: [String: AnyObject]!
+                
+                do {
+                    // Separar parser da API
+                    parsedResult = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String: AnyObject]
+                    let statements = (parsedResult["statementList"] as? [[String: AnyObject]])!//.flatMap(User.init)!
+                    
+                    var s = [Statement]()
+                    
+                    for statement in statements {
+                        s.append(Statement(json: statement)!)
+                    }
+                    
+                    print(s)
+
+//                    print(statements)
+//                    print(statements!.count)
+//                    completion(statements)
+                    
+                } catch {
+                    print("Erro ao parsear JSON")
+                }
+            } else {
+                print("Failure")
+            }
+        }
     }
 }

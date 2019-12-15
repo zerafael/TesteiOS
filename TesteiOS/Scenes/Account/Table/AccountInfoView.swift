@@ -13,7 +13,6 @@ class AccountInfoView: UIView {
     let nameInput: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "HelveticaNeue-Light", size: 25)
-        label.text = "Jose da Silva Teste"
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -39,7 +38,6 @@ class AccountInfoView: UIView {
     let accountNumberInput: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "HelveticaNeue-Light", size: 25)
-        label.text = "2050 / 01.111222-4"
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -57,7 +55,6 @@ class AccountInfoView: UIView {
     let balanceInput: UILabel = {
        let label = UILabel()
        label.font = UIFont(name: "HelveticaNeue-Light", size: 25)
-       label.text = "R$1.000,00"
        label.textColor = .white
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
