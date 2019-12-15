@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
         textField.setRightPadding(13)
         textField.backgroundColor = .white
         textField.placeholder = "User"
+        textField.keyboardType = .emailAddress
         textField.layer.cornerRadius = 4
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor(rgb: "#DCE2EE").cgColor
@@ -37,6 +38,7 @@ class LoginViewController: UIViewController {
         textField.setRightPadding(13)
         textField.backgroundColor = .white
         textField.placeholder = "Password"
+        textField.isSecureTextEntry = true
         textField.layer.cornerRadius = 4
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor(rgb: "#DCE2EE").cgColor
@@ -108,6 +110,6 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginDelegate {
     func loginSucceed() {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.pushViewController(AccountViewController(), animated: true)
     }
 }

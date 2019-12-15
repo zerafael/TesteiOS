@@ -17,14 +17,17 @@ class AccountPresenter {
     init(delegate: AccountDelegate) {
         self.delegate = delegate
         
+        checkLogged()
         configureUser()
     }
     
     private func configureUser() {
-        user = KeychainUserStorage().get()!
-        delegate.setAccountInfo(user: user)
-        
-        loadStatements()
+        if let user = KeychainUserStorage().get() {
+            delegate.setAccountInfo(user: user)
+            self.user = user
+            
+            loadStatements()
+        }
     }
     
     private func loadStatements() {
@@ -34,7 +37,7 @@ class AccountPresenter {
     }
     
     func handleLogout() {
-        UserDefaults.standard.removeObject(forKey: "logged")
+        UserDefaults.standard.set(false, forKey: "logged")
         checkLogged()
     }
     

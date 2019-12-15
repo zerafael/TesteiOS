@@ -72,7 +72,7 @@ class AccountViewController: UIViewController {
 extension AccountViewController: AccountDelegate {
     func setAccountInfo(user: User) {
         accountInfoView.nameInput.text = user.name
-        accountInfoView.accountNumberInput.text = user.bankAccount + " / " + user.agency
+        accountInfoView.accountNumberInput.text = Formatter().formatBankAccount(agency: user.agency, account: user.bankAccount)
         accountInfoView.balanceInput.text = Formatter().formatCurrency(value: user.balance)
     }
     
@@ -82,7 +82,7 @@ extension AccountViewController: AccountDelegate {
     }
     
     func logoutSucceed() {
-        self.navigationController?.pushViewController(LoginViewController(), animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

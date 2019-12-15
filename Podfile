@@ -7,5 +7,6 @@ target 'TesteiOS' do
 
   pod 'Alamofire', '~> 4.9.1'
   pod 'SwiftKeychainWrapper'
+  pod 'PKHUD', '~> 5.0'
 
 end

@@ -18,10 +18,14 @@ struct User: Codable {
 
 extension User {
     init?(json: [String: AnyObject]) {
-        id = json["userId"] as! Int
-        name = json["name"] as! String
-        bankAccount = json["bankAccount"] as! String
-        agency = json["agency"] as! String
-        balance = Float(truncating: json["balance"] as! NSNumber)
+        guard let id = json["userId"] as? Int else {
+            return nil
+        }
+        
+        self.id = id
+        self.name = json["name"] as! String
+        self.bankAccount = json["bankAccount"] as! String
+        self.agency = json["agency"] as! String
+        self.balance = Float(truncating: json["balance"] as! NSNumber)
     }
 }

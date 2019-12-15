@@ -19,12 +19,30 @@ class LoginPresenter {
     }
     
     func handleLogin(user: String, password: String) {
-        api.login(user: user, password: password, completion: { (data) in
-            if (KeychainUserStorage().save(data: data)) {
-                UserDefaults.standard.set(true, forKey: "logged")
-                
-                self.delegate.loginSucceed()
-            }
-        })
+        if(checkCredentials(user, password)) {
+            api.login(user: user, password: password, completion: { (data) in
+                if (KeychainUserStorage().save(data: data)) {
+                    UserDefaults.standard.set(true, forKey: "logged")
+                    
+                    self.delegate.loginSucceed()
+                }
+            })
+        }
+    }
+    
+    private func checkCredentials(_ user: String, _ password: String) -> Bool {
+        if user.isEmpty || user == ""{
+            // Alerta campos vazios
+            return false
+        }
+        
+        if password.isEmpty || password == ""{
+            // Alerta campos vazios
+            return false
+        }
+        
+        
+        
+        return true
     }
 }

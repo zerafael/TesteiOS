@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.9.1)
+  - PKHUD (5.3.0)
   - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
+  - PKHUD (~> 5.0)
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - PKHUD
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: dc97bb0cc28c11cb30a21dbd29a4119ec1a9a3a2
+PODFILE CHECKSUM: 4da91105581946eafa7b5c18997f4899ff4cd744
 
 COCOAPODS: 1.8.3

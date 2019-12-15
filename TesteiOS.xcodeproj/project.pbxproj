@@ -123,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				820DEA9523A5CAB50004535E /* Table */,
+				820DEA8B23A48AEA0004535E /* AccountInfoView.swift */,
 				820DEA8723A460D60004535E /* AccountViewController.swift */,
 				820DEA9323A49DB30004535E /* AccountPresenter.swift */,
 				820DEA9123A498AD0004535E /* AccountDelegate.swift */,
@@ -133,7 +134,6 @@
 		820DEA9523A5CAB50004535E /* Table */ = {
 			isa = PBXGroup;
 			children = (
-				820DEA8B23A48AEA0004535E /* AccountInfoView.swift */,
 				820DEA8F23A48B210004535E /* StatementTableViewCell.swift */,
 				820DEA9623A5CB7A0004535E /* HeaderStatementsView.swift */,
 			);
