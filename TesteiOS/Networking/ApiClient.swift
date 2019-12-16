@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftKeychainWrapper
+import PKHUD
 
 class ApiClient {
     
@@ -24,6 +25,7 @@ class ApiClient {
         let data: [ String: Any] = ["user": user, "password": password]
         
         Alamofire.request(urlRequest, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            PKHUD.sharedHUD.hide()
             if response.result.isSuccess {
                 if let user = Parser().parseUser(data: response.data!) {
                     completion(user)
@@ -38,6 +40,7 @@ class ApiClient {
         let urlRequest = baseUrl + Contants.API.statementsUrl + "/\(userId)"
         
         Alamofire.request(urlRequest, method: .get).responseJSON { (response) in
+            PKHUD.sharedHUD.hide()
             if response.result.isSuccess {
                 if let statements = Parser().parseStatements(data: response.data!) {
                     completion(statements)

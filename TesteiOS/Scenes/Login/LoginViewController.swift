@@ -19,29 +19,33 @@ class LoginViewController: UIViewController {
         return imageView
     }()
     
-    let loginTextField: UITextField = {
+    lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.setLeftPadding(13)
         textField.setRightPadding(13)
         textField.backgroundColor = .white
         textField.placeholder = "User"
         textField.keyboardType = .emailAddress
+        textField.returnKeyType = .next
         textField.layer.cornerRadius = 4
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor(rgb: "#DCE2EE").cgColor
+        textField.delegate = self
         return textField
     }()
     
-    let passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.setLeftPadding(13)
         textField.setRightPadding(13)
         textField.backgroundColor = .white
         textField.placeholder = "Password"
         textField.isSecureTextEntry = true
+        textField.returnKeyType = .done
         textField.layer.cornerRadius = 4
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor(rgb: "#DCE2EE").cgColor
+        textField.delegate = self
         return textField
     }()
     
@@ -108,8 +112,31 @@ class LoginViewController: UIViewController {
     }
 }
 
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            handleLoginButton()
+        }
+        
+        return true
+    }
+}
+
 extension LoginViewController: LoginDelegate {
     func loginSucceed() {
+        self.loginTextField.text = ""
+        self.passwordTextField.text = ""
         self.navigationController?.pushViewController(AccountViewController(), animated: true)
+    }
+    
+    func loginFailed(message: String) {
+        let alert = UIAlertController(title: "Não foi possivel fazer o login", message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
     }
 }

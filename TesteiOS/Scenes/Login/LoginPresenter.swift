@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PKHUD
 
 class LoginPresenter {
     let delegate: LoginDelegate
@@ -20,6 +21,7 @@ class LoginPresenter {
     
     func handleLogin(user: String, password: String) {
         if(checkCredentials(user, password)) {
+            PKHUD.sharedHUD.show()
             api.login(user: user, password: password, completion: { (data) in
                 if (KeychainUserStorage().save(data: data)) {
                     UserDefaults.standard.set(true, forKey: "logged")
@@ -32,16 +34,19 @@ class LoginPresenter {
     
     private func checkCredentials(_ user: String, _ password: String) -> Bool {
         if user.isEmpty || user == ""{
-            // Alerta campos vazios
+            self.delegate.loginFailed(message: "Campo de usuário vazio")
             return false
         }
         
         if password.isEmpty || password == ""{
-            // Alerta campos vazios
+            self.delegate.loginFailed(message: "Campo de senha vazio")
             return false
         }
         
-        
+        if !password.isPasswordValid() {
+            self.delegate.loginFailed(message: "Senha inválida. A senha deve conter uma letra maiúscula, um caracter especial e um número")
+            return false
+        }
         
         return true
     }

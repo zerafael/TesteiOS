@@ -10,4 +10,5 @@ import Foundation
 
 protocol LoginDelegate {
     func loginSucceed()
+    func loginFailed(message: String)
 }

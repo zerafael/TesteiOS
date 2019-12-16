@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PKHUD
 
 class AccountPresenter {
     var user: User!
@@ -31,6 +32,7 @@ class AccountPresenter {
     }
     
     private func loadStatements() {
+        PKHUD.sharedHUD.show()
         api.loadUserStatements(userId: user.id) { (statements) in
             self.delegate.setStatements(statements: statements)
         }
